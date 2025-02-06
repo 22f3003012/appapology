@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            perspective: 1000px;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        .hero-section {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+        }
+        .image-track {
+            display: flex;
+            animation: moveTrack 25s linear infinite;
+        }
+        @keyframes moveTrack {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin: 0 10px;
+        }
+        /* Container and content styling */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            transform: rotateX(10deg);
+            opacity: 0;
+            animation: fadeInRotate 1.5s forwards;
+        }
+        @keyframes fadeInRotate {
+            to {
+                opacity: 1;
+                transform: rotateX(0);
+            }
+        }
+        .heart-icon {
+            color: #ff6b6b;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: heartBeat 1.5s infinite;
+        }
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .apology-message {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.8);
+            opacity: 0;
+            animation: revealMessage 1.5s 1s forwards;
+        }
+        @keyframes revealMessage {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .forgive-button {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .forgive-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+        }
+        .forgive-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="image-track">
+            <img src="/images/image1.jpg" alt="Placeholder 1" class="hero-image">
+            <img src="/images/image2.jpg" alt="Placeholder 2" class="hero-image">
+            <img src="/images/image3.jpg" alt="Placeholder 3" class="hero-image">
+            <img src="/images/image4.jpg" alt="Placeholder 4" class="hero-image">
+            <img src="/images/image5.jpg" alt="Placeholder 5" class="hero-image">
+            <img src="/images/image6.jpg" alt="Placeholder 6" class="hero-image">
+            <!-- Duplicated for seamless looping -->
+            <img src="/images/image1.jpg" alt="Placeholder 1" class="hero-image">
+            <img src="/images/image2.jpg" alt="Placeholder 2" class="hero-image">
+            <img src="/images/image3.jpg" alt="Placeholder 3" class="hero-image">
+            <img src="/images/image4.jpg" alt="Placeholder 4" class="hero-image">
+            <img src="/images/image5.jpg" alt="Placeholder 5" class="hero-image">
+            <img src="/images/image6.jpg" alt="Placeholder 6" class="hero-image">
+        </div>
+    </div>
+
+    <div class="container">
+        <i class="fas fa-heart heart-icon"></i>
+        <h1>I'm Truly Sorry</h1>
+
+        <div class="apology-message">
+            <p>Meri pyari Puchki,I deeply regret the pain I've caused you.Mujhe nahi pata tha ki tm itna zada hurt ho jaogi meri baaton se. I take full responsibility. I understand the emotions I've wounded. From the bottom of my heart, I am sorry. I hope you can find it in your heart to forgive me, but I also understand if you need time.</p>
+        </div>
+        <button class="forgive-button" onclick="showGratitude()">Forgive Me?</button>
+    </div>
+
+    <script>
+        function showGratitude() {
+            alert('Thank you for considering forgiveness. I promise to do better. Your puchku loves you❤️');
+        }
+    </script>
+</body>
+</html>
